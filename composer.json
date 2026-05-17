@@ -1,0 +1,65 @@
+{
+    "name": "lornequinn/blog-mcp",
+    "description": "MCP server tools for the LQ blog suite — the editor surface. No web admin.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lorne Quinn",
+            "email": "lorne@lornequinn.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/lornequinn/blog/issues",
+        "source": "https://github.com/lornequinn/blog"
+    },
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^12.41|^13.0",
+        "laravel/mcp": "^0.7",
+        "lornequinn/blog-core": "@dev"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpstan/phpstan": "^2.0",
+        "larastan/larastan": "^3.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../blog-core",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LorneQuinn\\Blog\\Mcp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LorneQuinn\\Blog\\Mcp\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LorneQuinn\\Blog\\Mcp\\BlogMcpServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
