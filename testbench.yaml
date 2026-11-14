@@ -1,0 +1,5 @@
+providers:
+  - Laravel\Mcp\Server\McpServiceProvider
+  - LorneQuinn\Blog\Core\BlogCoreServiceProvider
+  - LorneQuinn\Blog\Mcp\BlogMcpServiceProvider
+  - LorneQuinn\Blog\Mcp\Tests\Fixtures\TestViewsServiceProvider

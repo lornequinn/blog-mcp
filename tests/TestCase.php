@@ -8,6 +8,7 @@ use Illuminate\Foundation\Application;
 use Laravel\Mcp\Server\McpServiceProvider;
 use LorneQuinn\Blog\Core\BlogCoreServiceProvider;
 use LorneQuinn\Blog\Mcp\BlogMcpServiceProvider;
+use LorneQuinn\Blog\Mcp\Tests\Fixtures\TestViewsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
@@ -18,6 +19,7 @@ abstract class TestCase extends Orchestra
             McpServiceProvider::class,
             BlogCoreServiceProvider::class,
             BlogMcpServiceProvider::class,
+            TestViewsServiceProvider::class,
         ];
     }
 

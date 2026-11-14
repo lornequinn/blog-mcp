@@ -22,7 +22,7 @@ it('publishes a draft Post and stamps published_at', function (): void {
             ->etc()
         ));
 
-    expect($post->fresh()->status)->toBe(PostStatus::Published);
+    expect($post->refresh()->status)->toBe(PostStatus::Published);
 });
 
 it('unpublishes back to draft and clears published_at', function (): void {
@@ -36,8 +36,7 @@ it('unpublishes back to draft and clears published_at', function (): void {
             ->etc()
         ));
 
-    $fresh = $post->fresh();
-    expect($fresh)->not->toBeNull();
-    expect($fresh->status)->toBe(PostStatus::Draft);
-    expect($fresh->published_at)->toBeNull();
+    $post->refresh();
+    expect($post->status)->toBe(PostStatus::Draft);
+    expect($post->published_at)->toBeNull();
 });

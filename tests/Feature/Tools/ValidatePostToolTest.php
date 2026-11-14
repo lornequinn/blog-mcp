@@ -27,7 +27,7 @@ function registerDemoComponent(): void
 
         public function view(): string
         {
-            return 'demo';
+            return 'blog-mcp-test::demo';
         }
 
         public function requiredAttributes(): array
